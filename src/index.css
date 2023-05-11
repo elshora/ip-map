@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Rubik:wght@400;500;700&family=Saira&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  --Very-Dark-Gray: hsl(0, 0%, 17%);
+  --Dark-Gray: hsl(0, 0%, 59%);
+}
+header {
+  background-image: url("./assets/images/pattern-bg-desktop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 18px;
+  position: relative;
+  height: 300px;
+  padding-top: 3rem;
+}
+.data {
+  position: absolute;
+  z-index: 100000000;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.title {
+  font-weight: 500;
+}
+.form input {
+  width: 450px;
+  line-height: 1.7rem;
+  padding: 1rem;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 1rem 0px 0px 1rem;
+  border: 1px solid lightblue;
+}
+.form button {
+  background-color: var(--Very-Dark-Gray);
+  color: white;
+  border: 1px solid lightblue;
+  padding: 1rem;
+  border-radius: 0px 1rem 1rem 0px;
+}
+.form button:hover {
+  background-color: var(--Dark-Gray);
+}
+.data {
+  border-radius: 1rem;
+}
+.data-piece {
+  position: relative;
+  padding: 1rem;
+}
+.data-piece::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 80%;
+  right: 0;
+  top: 10%;
+  background-color: var(--Dark-Gray);
+}
+.data div:nth-child(4)::after {
+  content: "";
+  position: absolute;
+  height: 0%;
+}
+
+.data-piece h5 {
+  font-size: 14px;
+}
+.data-piece p {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (width < 768px) {
+  .form input {
+    width: 250px;
+  }
+  header {
+    background-image: url("./assets/images/pattern-bg-mobile.png");
+    height: 350px;
+  }
+  .data {
+    top: 350px;
+  }
+  .data-piece {
+    text-align: center;
+  }
+  .data-piece::after {
+    width: 0;
+    height: 0;
+  }
+}
